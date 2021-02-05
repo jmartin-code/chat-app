@@ -11,7 +11,7 @@ const App = () => {
       projectID="dcc84af0-686b-4711-84f9-20d1469f164f"
       userName="jmartin"
       userSecret="112233445566778899"
-      // showFeed={(props)=> <ChatFeed {...chatAppProps}}
+      renderChatFeed={(chatProps) => <ChatFeed {...chatProps} />}
     />
   );
 };
