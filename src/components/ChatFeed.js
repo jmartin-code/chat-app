@@ -13,8 +13,8 @@ export default function ChatFeed(props) {
     // console.log(keys);
     return keys.map((keys, index) => {
       const message = messages[keys];
-      const lastMessage = "0";
-      const isPrivate = null;
+      const lastMessage = index === 0 ? null : keys[index - 1];
+      const isPrivate = userName === message.sender.username;
     });
   };
   renderMessages();
