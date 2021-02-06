@@ -4,12 +4,25 @@ import Form from "./Form";
 
 const ChatFeed = (props) => {
   console.log(props);
-
   const { messages, userName, activeChat, chats } = props;
 
   const chat = chats && chats[activeChat];
-
   // console.log(chat);
+
+  const renderReadChecks = (message, isPrivate) => {
+    return chat.people.map((person, index) => {
+      person.last_read === message.id && (
+        <div
+          key={`read_${index}`}
+          className="read-check"
+          style={{
+            float: isPrivate ? "right" : "left",
+            backgroundImage: `url(${person?.person?.avatar})`,
+          }}
+        />
+      );
+    });
+  };
 
   const renderMessages = () => {
     const keys = Object.keys(messages);
@@ -20,7 +33,7 @@ const ChatFeed = (props) => {
       const lastMessageKey = index === 0 ? null : keys[index - 1];
 
       return (
-        <div key={`msg_${index}`} style={{ width: "90%" }}>
+        <div key={`msg_${index}`} style={{ width: "100%" }}>
           <div className="message-section">
             {isPrivate ? (
               <PrivateMessage message={message} />
@@ -32,12 +45,14 @@ const ChatFeed = (props) => {
             )}
           </div>
           <div
-            className="read-check"
+            className="read-checks"
             style={{
               marginRight: isPrivate ? "10px" : "0",
               marginLeft: isPrivate ? "0" : "60px",
             }}
-          ></div>
+          >
+            {renderReadChecks(message, isPrivate)}
+          </div>
         </div>
       );
     });
@@ -55,7 +70,7 @@ const ChatFeed = (props) => {
       </div>
       {renderMessages()}
       <div style={{ height: "50px" }} />
-      <div className="form">
+      <div className="message-form-container">
         <Form {...props} chatId={activeChat} />
       </div>
     </div>

@@ -1,11 +1,11 @@
 export default function PrivateMessage({ message }) {
-  if (message?.attachment?.length > 0) {
+  if (message?.attachments?.length > 0) {
     return (
       <img
-        className="image-message"
+        className="message-image"
         style={{ float: "right" }}
         src={message.attachments[0].file}
-        alt="img-message"
+        alt="message-attachment"
       />
     );
   }

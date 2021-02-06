@@ -2,20 +2,20 @@ export default function PublicMessage({ message, lastMessage }) {
   const firstMessage =
     !lastMessage || lastMessage.sender.username !== message.sender.username;
   return (
-    <div className="public-message">
+    <div className="message-row">
       {firstMessage && (
         <div
-          className="message-container"
+          className="message-avatar"
           style={{ backgroundImage: `url(${message?.sender?.avatar})` }}
         />
       )}
 
-      {message?.attachment?.length > 0 ? (
+      {message?.attachments?.length > 0 ? (
         <img
-          className="image-message"
+          className="message-image"
           style={{ marginLeft: firstMessage ? "8px" : "40px" }}
           src={message.attachments[0].file}
-          alt="img-message"
+          alt="message-attachment"
         />
       ) : (
         <div
