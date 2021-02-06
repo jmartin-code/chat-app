@@ -1,5 +1,3 @@
-// import React from "react";
-// import Message from "./Message";
 import PrivateMessage from "./PrivateMessage";
 import PublicMessage from "./PublicMessage";
 import Form from "./Form";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function PublicMessage({ message, lastMessage }) {
   const firstMessage =
     !lastMessage || lastMessage.sender.username !== message.sender.username;

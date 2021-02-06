@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function PrivateMessage({ message }) {
   if (message?.attachment?.length > 0) {
     return (
