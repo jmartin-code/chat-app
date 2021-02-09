@@ -6,7 +6,7 @@
 }
 
 .ce-chat-feed-container {
-  background-color: rgb(237, 248, 248) !important;
+  background-color: rgb(201, 201, 201) !important;
 }
 
 .ce-chat-title-container {
@@ -20,17 +20,15 @@
 }
 
 .ce-chat-list {
-  background-color: rgb(10, 100, 200) !important;
+  background-color: rgb(201, 201, 201) !important;
 }
 
 .ce-chats-container {
-  background-color: rgb(10, 100, 200) !important;
+  /* background-color: rgb(201, 201, 201) !important; */
 }
 
 .ce-active-chat-card {
   background-color: rgb(240, 100, 40) !important;
-  border-radius: 30px !important;
-  /* border: solid 10px black !important; */
 }
 
 .ce-chat-subtitle-text {
@@ -57,7 +55,7 @@
 }
 
 .ce-settings {
-  background-color: rgb(10, 100, 200) !important;
+  background-color: rgb(201, 201, 201) !important;
 }
 
 .ce-autocomplete-input {
