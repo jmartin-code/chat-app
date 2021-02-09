@@ -65,6 +65,7 @@ const Login = () => {
               className={classes.form}
               variant="outlined"
               label="Username"
+              type="text"
               required
               value={username}
               onChange={(e) => setusername(e.target.value)}
@@ -73,6 +74,7 @@ const Login = () => {
               className={classes.form}
               variant="outlined"
               label="Password"
+              type="password"
               required
               value={password}
               onChange={(e) => setpassword(e.target.value)}
